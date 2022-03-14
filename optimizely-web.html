@@ -68,6 +68,6 @@
     var dataContainer = document.getElementById("myData");
     var stateData = JSON.stringify(window.optimizely.get('data'));
         
-    dataContainer.innerText = '<pre><code>' + stateData + '</code></pre>';    
+    dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';    
   </script>
 </html>
