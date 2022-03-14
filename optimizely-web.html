@@ -48,6 +48,7 @@
                 Optimizely Web JavaScript API testing.
               </p>              
             </div>
+            <div id="json"></div>
           </div>
         </section>    
       </div>    
@@ -60,6 +61,14 @@
         </p>
         <p class="mb-1">© 2022 - MVC Optimizely - <a href="/Home/Privacy">Privacy</a></p>
       </div>
-    </footer>    
+    </footer>
   </body>
+  
+  <script>
+    element = document.querySelector('#json');
+    
+    element.html(window.optimizely.get('data').toString)
+    
+  
+  </script>
 </html>
