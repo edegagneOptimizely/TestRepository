@@ -74,6 +74,6 @@
     var dataContainer = document.getElementById("myData");
     var dataFile = JSON.stringify(optimizelyClientInstance.getOptimizelyConfig().datafile, undefined, 4);
         
-    dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
+    dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
   </script>
 </html>
