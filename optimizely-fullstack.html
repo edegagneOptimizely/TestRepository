@@ -72,8 +72,8 @@
     });
     
     var dataContainer = document.getElementById("myData");
-    var dataFile = JSON.stringify(optimizelyClientInstance.getOptimizelyConfig().datafile, undefined, 4);
-        
-    dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';  
+    var dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
+    
+    dataContainer.innerHTML = '<pre><code>' + JSON.stringify(dataFile, undefined, 4) + '</code></pre>';
   </script>
 </html>
