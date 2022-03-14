@@ -50,6 +50,7 @@
                 Optimizely Full Stack JavaScript SDK testing.
               </p>              
             </div>
+            <div id="myData"></div>
           </div>
         </section>    
       </div>    
@@ -69,5 +70,10 @@
     var optimizelyClientInstance = window.optimizelySdk.createInstance({
       datafile: window.optimizelyDatafile
     });
+    
+    var dataContainer = document.getElementById("myData");
+    var dataFile = JSON.stringify(optimizelyClientInstance.getOptimizelyConfig().datafile, undefined, 4);
+        
+    dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
   </script>
 </html>
