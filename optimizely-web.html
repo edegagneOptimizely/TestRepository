@@ -48,7 +48,7 @@
                 Optimizely Web JavaScript API testing.
               </p>              
             </div>
-            <div id="json"></div>
+            <div id="myData"></div>
           </div>
         </section>    
       </div>    
@@ -65,6 +65,9 @@
   </body>
   
   <script>
-    document.querySelector('#json').innerHtml = JSON.stringify(window.optimizely.get('data'));
+    var dataContainer = document.getElementById("myData");
+    var stateData = JSON.stringify(window.optimizely.get('data'));
+        
+    dataContainer.innerHtml = '<code>' + stateData + '</code>';    
   </script>
 </html>
