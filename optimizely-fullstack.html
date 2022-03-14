@@ -85,13 +85,14 @@
       <!-- console.log( "ready!" ); -->
       
       $('button').click(function() {
+        let dataContainer = document.getElementById('myData');
+        let elementID = $(this).data('id');
+        
         dataContainer.innerHTML = '';
         
-        switch($(this).data("id")) {
+        switch(elementID) {
           case 'button1':            
-            <!-- alert( "Handler for " + $(this).data("id") + ".click() called." ); -->
-            var dataContainer = document.getElementById("myData");
-            var dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
+            let dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
     
             dataFile = dataFile.replaceAll(',',",</br>");
             dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
@@ -99,15 +100,9 @@
           case 'button2':
             break;
           default:
-            alert( "Handler for " + $(this).data("id") + ".click() called." );
-        }
-        
-      });
-      
+            alert('Handler for ' + elementID + '.click() called.');
+        }        
+      });      
     });
-    
-    
-
-    
   </script>
 </html>
