@@ -81,10 +81,11 @@
   <script>
     var optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
     
-    $( document ).ready(function() {
-        console.log( "ready!" );
+    $(document).ready(function() {
+      <!-- console.log( "ready!" ); -->
       
-      $( "button" ).click(function() {
+      $('button').click(function() {
+        dataContainer.innerHTML = '';
         
         switch($(this).data("id")) {
           case 'button1':            
