@@ -72,13 +72,8 @@
     });
     
     var dataContainer = document.getElementById("myData");
-    var dataFile = JSON.stringify(optimizelyClientInstance.getOptimizelyConfig().datafile, replacer, 4);
+    var dataFile = JSON.stringify(optimizelyClientInstance.getOptimizelyConfig().datafile, undefined, 4);
         
-    dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
-    
-    
-    function replacer(key, value) {
-      return value.replace(/[^\w\s]/gi, '');
-    }    
+    dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';  
   </script>
 </html>
