@@ -65,10 +65,6 @@
   </body>
   
   <script>
-    element = document.querySelector('#json');
-    
-    element.html(window.optimizely.get('data').toString)
-    
-  
+    document.querySelector('#json').innerHtml = JSON.stringify(window.optimizely.get('data'));
   </script>
 </html>
