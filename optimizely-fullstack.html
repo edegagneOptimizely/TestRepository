@@ -79,22 +79,34 @@
   </body>
   
   <script>
+    var optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
+    
     $( document ).ready(function() {
         console.log( "ready!" );
       
       $( "button" ).click(function() {
-        alert( "Handler for " + $(this).data("id") + ".click() called." );
+        
+        switch($(this).data("id")) {
+          case 'button1':            
+            <!-- alert( "Handler for " + $(this).data("id") + ".click() called." ); -->
+            var dataContainer = document.getElementById("myData");
+            var dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
+    
+            dataFile = dataFile.replaceAll(',',",</br>");
+            dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
+            break;
+          case 'button2':
+            break;
+          default:
+            alert( "Handler for " + $(this).data("id") + ".click() called." );
+        }
+        
       });
       
     });
     
     
+
     
-    var optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
-    var dataContainer = document.getElementById("myData");
-    var dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
-    
-    dataFile = dataFile.replaceAll(',',",</br>");
-    dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
   </script>
 </html>
