@@ -77,10 +77,12 @@
     let optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
     let jsonViewer = new JSONViewer();
     document.querySelector("#json").appendChild(jsonViewer.getContainer());
+    jsonViewer.showJSON(JSON.parse('{}'));
     
-    $(document).ready(function() {      
+    $(document).ready(function() {
       $('button').click(function() {
         let elementID = $(this).data('id');
+        jsonViewer.showJSON(JSON.parse('{}'));
                 
         switch(elementID) {
           case 'button1':
