@@ -51,11 +51,11 @@
                 Optimizely Web JavaScript API testing.
               </p>              
             </div>
-            <div class="mb-4">
+            <div class="col-lg-6 col-md-8 mb-4">
               <button type="button" data-id="button1" class="btn btn-primary">Primary</button>
               <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>              
             </div>            
-            <pre id="json-display" class=""></pre>
+            <pre id="json-display" class="col-lg-6 col-md-8" style="min-height:200px;"></pre>
           </div>
         </section>    
       </div>    
@@ -80,16 +80,8 @@
         let editor = new JsonEditor('#json-display');
         
         switch(elementID) {
-          case 'button1':
-            debugger;            
-            //let editor = new JsonEditor('#json-display', window.optimizely.get('data'));
+          case 'button1':            
             editor.load(window.optimizely.get('data'));
-            
-            //let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
-            //dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
-            
-            break;
-          case 'button2':
             break;
           default:
             alert('Handler for ' + elementID + '.click() called.');
