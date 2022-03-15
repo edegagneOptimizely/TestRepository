@@ -4,6 +4,7 @@
     background: #1c2833;
     font-size: 13px;
     font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    min-height: 250px
 }
 
 .json-viewer ul {
