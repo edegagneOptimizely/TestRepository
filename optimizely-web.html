@@ -85,8 +85,8 @@
         switch(elementID) {
           case 'button1':
             debugger;
-            let data = JSON.stringify(window.optimizely.get('data'));
-            let editor = new JsonEditor('#json-display', data);
+            
+            let editor = new JsonEditor('#json-display', window.optimizely.get('data'));
             
             //let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
             //dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
