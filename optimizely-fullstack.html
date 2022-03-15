@@ -54,8 +54,8 @@
               </p>              
             </div>
             <div class="col-12 mb-4">
-              <button type="button" data-id="button1" class="btn btn-primary">Primary</button>
-              <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>
+              <button type="button" data-id="button1" class="btn btn-primary">Get Datafile</button>
+              <button type="button" data-id="button2" class="btn btn-secondary">Clear</button>
             </div>
             <div id="json" class="col-12 col-md-8 col-lg-6 px-4 py-2" style="min-height:250px;"></div>
           </div>
@@ -89,8 +89,8 @@
             jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
             break;
           default:
-            alert('Handler for ' + elementID + '.click() called.');
-        }        
+            //alert('Handler for ' + elementID + '.click() called.');
+        }
       });      
     });
   </script>
