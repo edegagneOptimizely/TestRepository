@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/page.css">
     <!–– Bootstrap js ––>  
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="src/jquery.json-editor.min.js"></script>
     <script type="text/javascript" src="src/json-viewer.js"></script>
     <link rel="stylesheet" type="text/css" href="src/json-viewer.css">
     <!–– Optimizely Full Stack Javascript SDK ––> 
@@ -58,8 +57,7 @@
               <button type="button" data-id="button1" class="btn btn-primary">Primary</button>
               <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>
             </div>
-            <pre id="json-display" class="col-12 col-md-8 col-lg-6 json-editor-blackbord px-4 py-2" style="min-height:250px;"></pre>
-            <pre id="json" class="col-12 col-md-8 col-lg-6" style="min-height:250px;"></pre>
+            <pre id="json-viewer" class="col-12 col-md-8 col-lg-6 px-4 py-2" style="min-height:250px;"></pre>
           </div>
         </section>    
       </div>    
@@ -78,24 +76,15 @@
   <script>
     let optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
     let jsonViewer = new JSONViewer();
-    document.querySelector("#json").appendChild(jsonViewer.getContainer());
+    document.querySelector("#json-viewer").appendChild(jsonViewer.getContainer());
     
-    $(document).ready(function() {
-      <!-- console.log( "ready!" ); -->
-      
+    $(document).ready(function() {      
       $('button').click(function() {
         let elementID = $(this).data('id');
-        let editor = new JsonEditor('#json-display');
-        
                 
         switch(elementID) {
           case 'button1':
-            editor.load(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
             jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
-            //let dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
-    
-            //dataFile = dataFile.replaceAll(',',",</br>");
-            //dataContainer.innerHTML = '<pre><code>' + dataFile + '</code></pre>';
             break;
           default:
             alert('Handler for ' + elementID + '.click() called.');
