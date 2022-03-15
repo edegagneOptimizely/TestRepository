@@ -87,11 +87,11 @@
     $(document).ready(function() {
       $('button').click(function() {
         let elementID = $(this).data('id');
-        jsonViewer.showJSON(JSON.parse('{}'), null, 1);
+        jsonViewer.showJSON(JSON.parse('{}'));
                 
         switch(elementID) {
           case 'button1':
-            jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
+            jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile), null, 1);
             break;
           default:
             //alert('Handler for ' + elementID + '.click() called.');
