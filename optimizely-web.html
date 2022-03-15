@@ -88,23 +88,13 @@
             //let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
             //dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
             
-            
-            
             break;
           case 'button2':
             break;
           default:
             alert('Handler for ' + elementID + '.click() called.');
         }        
-      });
-      
-      function getJson() {
-        try {
-          return JSON.parse($('#json-input').val());
-        } catch (ex) {
-          alert('Wrong JSON Format: ' + ex);
-        }
-      }
+      });      
     });
   </script>  
 </html>
