@@ -54,9 +54,8 @@
             <div class="mb-4">
               <button type="button" data-id="button1" class="btn btn-primary">Primary</button>
               <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>              
-            </div>
-            <div id="myData"></div>
-            <pre id="json-display"></pre>
+            </div>            
+            <pre id="json-display" class=""></pre>
           </div>
         </section>    
       </div>    
@@ -76,22 +75,22 @@
     $(document).ready(function() {
       <!-- console.log( "ready!" ); -->      
       
-      $('button').click(function() {
-        let dataContainer = document.getElementById('myData');
+      $('button').click(function() {        
         let elementID = $(this).data('id');
+        let editor = new JsonEditor('#json-display');
         
         dataContainer.innerHTML = '';
         
         switch(elementID) {
           case 'button1':
-            debugger;
-            
-            let editor = new JsonEditor('#json-display', window.optimizely.get('data'));
+            debugger;            
+            //let editor = new JsonEditor('#json-display', window.optimizely.get('data'));
+            editor.load(window.optimizely.get('data'));
             
             //let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
             //dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
             
-            //editor.load(getJson());
+            
             
             break;
           case 'button2':
