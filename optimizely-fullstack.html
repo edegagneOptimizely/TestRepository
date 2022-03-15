@@ -92,6 +92,7 @@
         switch(elementID) {
           case 'button1':
             jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile), null, 1);
+            window.optimizelyClientInstance = optimizelyClientInstance;
             break;
           default:
             //alert('Handler for ' + elementID + '.click() called.');
