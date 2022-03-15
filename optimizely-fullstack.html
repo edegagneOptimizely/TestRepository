@@ -57,10 +57,10 @@
               <button type="button" data-id="button1" class="btn btn-primary">Primary</button>
               <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>
             </div>
-            <pre id="json-viewer" class="col-12 col-md-8 col-lg-6 px-4 py-2" style="min-height:250px;"></pre>
+            <div id="json" class="col-12 col-md-8 col-lg-6 px-4 py-2" style="min-height:250px;"></div>
           </div>
-        </section>    
-      </div>    
+        </section>
+      </div>
     </main>
     
     <footer class="border-top footer text-muted py-2">
@@ -76,7 +76,7 @@
   <script>
     let optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
     let jsonViewer = new JSONViewer();
-    document.querySelector("#json-viewer").appendChild(jsonViewer.getContainer());
+    document.querySelector("#json").appendChild(jsonViewer.getContainer());
     
     $(document).ready(function() {      
       $('button').click(function() {
