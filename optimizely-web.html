@@ -75,7 +75,7 @@
     $(document).ready(function() {
       let jsonViewer = new JSONViewer();
       document.querySelector('#json').appendChild(jsonViewer.getContainer());
-      jsonViewer.showJSON('{}');
+      jsonViewer.showJSON(JSON.parse('{}'));
       
       $('button').click(function() {        
         let elementID = $(this).data('id');        
