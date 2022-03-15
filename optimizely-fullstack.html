@@ -76,7 +76,9 @@
   </body>
   
   <script>
-    var optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
+    let optimizelyClientInstance = window.optimizelySdk.createInstance({datafile: window.optimizelyDatafile});
+    let jsonViewer = new JSONViewer();
+    document.querySelector("#json").appendChild(jsonViewer.getContainer());
     
     $(document).ready(function() {
       <!-- console.log( "ready!" ); -->
@@ -84,7 +86,7 @@
       $('button').click(function() {
         let elementID = $(this).data('id');
         let editor = new JsonEditor('#json-display');
-        let jsonViewer = new JSONViewer();
+        
                 
         switch(elementID) {
           case 'button1':
