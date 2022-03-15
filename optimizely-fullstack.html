@@ -87,7 +87,7 @@
     $(document).ready(function() {
       $('button').click(function() {
         let elementID = $(this).data('id');
-        jsonViewer.showJSON(JSON.parse('{}'));
+        jsonViewer.showJSON(JSON.parse('{}'), null, 1);
                 
         switch(elementID) {
           case 'button1':
