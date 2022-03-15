@@ -84,7 +84,7 @@
                 
         switch(elementID) {
           case 'button1':
-            editor.load(optimizelyClientInstance.getOptimizelyConfig().datafile);
+            editor.load(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
             //let dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
     
             //dataFile = dataFile.replaceAll(',',",</br>");
