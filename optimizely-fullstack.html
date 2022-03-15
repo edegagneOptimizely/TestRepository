@@ -11,6 +11,8 @@
     <!–– Bootstrap js ––>  
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="src/jquery.json-editor.min.js"></script>
+    <script type="text/javascript" src="src/json-viewer.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/json-viewer.css">
     <!–– Optimizely Full Stack Javascript SDK ––> 
     <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.min.js"></script>
     <!–– Optimizely Full Stack js ––>
@@ -57,6 +59,7 @@
               <button type="button" data-id="button2" class="btn btn-secondary">Secondary</button>
             </div>
             <pre id="json-display" class="col-12 col-md-8 col-lg-6 json-editor-blackbord px-4 py-2" style="min-height:250px;"></pre>
+            <pre id="json" class="col-12 col-md-8 col-lg-6" style="min-height:250px;"></pre>
           </div>
         </section>    
       </div>    
@@ -81,10 +84,12 @@
       $('button').click(function() {
         let elementID = $(this).data('id');
         let editor = new JsonEditor('#json-display');
+        let jsonViewer = new JSONViewer();
                 
         switch(elementID) {
           case 'button1':
             editor.load(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
+            jsonViewer.showJSON(JSON.parse(optimizelyClientInstance.getOptimizelyConfig().datafile));
             //let dataFile = optimizelyClientInstance.getOptimizelyConfig().datafile;
     
             //dataFile = dataFile.replaceAll(',',",</br>");
