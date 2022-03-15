@@ -74,8 +74,7 @@
   
   <script>
     $(document).ready(function() {
-      <!-- console.log( "ready!" ); -->
-      var editor = new JsonEditor('#json-display', getJson());
+      <!-- console.log( "ready!" ); -->      
       
       $('button').click(function() {
         let dataContainer = document.getElementById('myData');
@@ -84,11 +83,15 @@
         dataContainer.innerHTML = '';
         
         switch(elementID) {
-          case 'button1':            
-            let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
-            dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
+          case 'button1':
+            debugger;
+            let data = JSON.parse(window.optimizely.get('data'));
+            let editor = new JsonEditor('#json-display', data);
             
-            editor.load(getJson());
+            //let stateData = JSON.stringify(window.optimizely.get('data'), undefined, 4);
+            //dataContainer.innerHTML = '<pre><code>' + stateData + '</code></pre>';
+            
+            //editor.load(getJson());
             
             break;
           case 'button2':
